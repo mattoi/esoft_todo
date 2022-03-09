@@ -1,0 +1,28 @@
+name: todo
+description: An app to keep track of what you gotta do.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.0.13
+
+dev_dependencies:
+  test: ^1.20.1
+  flutter_lints: ^1.0.0
+
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Roboto
+      fonts: 
+        - asset: assets/fonts/Roboto-Regular.ttf
