@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 ///A task with a [title], optional [description] and a [isDone] boolean which is false by default.
 class Task {
-  String title = '';
+  String title;
   String description;
   bool? isDone = false;
 
@@ -28,7 +28,7 @@ class TaskList {
   UnmodifiableListView<Task> get contents => UnmodifiableListView(_contents);
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
-  ///Adds a new task with a required [title] and an optional [description].
+  ///Adds a new task with a [title] and [description].
   void addTask({String title = '', String description = ''}) {
     _contents.add(Task(title: title, description: description));
   }
@@ -43,6 +43,7 @@ class TaskList {
   }
 
   ///Edits the specified [task] with a [newTitle] and [newDescription].
+  //currently not being used
   void edit(
       {required task,
       required String newTitle,
@@ -54,6 +55,7 @@ class TaskList {
   ///Removes the specified [task] from the list.
   void removeTask(Task task) => _contents.remove(task);
 
+  ///Clears the contents of the list.
   void clear() => _contents.clear();
 
   ///Loads the list of saved tasks, if any, from shared preferences.
@@ -61,6 +63,7 @@ class TaskList {
     //This implementation is really poor but I don't know how a json-type format could be used,
     //or whether prefs even allows this anymore
     //this works fine and can be tested, but when used on initState() it doesn't refresh the screen with the values
+    //so it's not used
     final prefs = await _prefs;
     final List<String>? cachedTitles = prefs.getStringList('list_titles');
     final List<String>? cachedDescriptions =

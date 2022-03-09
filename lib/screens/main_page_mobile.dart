@@ -60,7 +60,6 @@ class _MainPageMobileState extends State<MainPageMobile> {
       appBar: AppBar(
         title: const Text(UITextStrings.appName),
         actions: [
-          //TODO consider adding a button to delete all checked counters
           //Button to delete all counters.
           IconButton(
             icon: const Icon(Icons.delete, color: Colors.white),
