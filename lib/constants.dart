@@ -55,7 +55,8 @@ final appTheme = ThemeData.dark().copyWith(
   hintColor: _appColorScheme.onSurface,
   appBarTheme: AppBarTheme(
     color: _appColorScheme.primary,
-    titleTextStyle: _appTextTheme.bodyMedium,
+    titleTextStyle:
+        _appTextTheme.bodyMedium?.copyWith(color: _appColorScheme.onPrimary),
   ),
   inputDecorationTheme: InputDecorationTheme(
     hintStyle:

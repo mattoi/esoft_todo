@@ -39,7 +39,10 @@ class TaskTile extends StatelessWidget {
         ),
         title: Text(
           task.title,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
         ),
         subtitle: Text(
           task.description,
